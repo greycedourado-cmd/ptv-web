@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticando...</title>
+    <script src="../app.js"></script>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif;">
+        <div style="text-align: center;">
+            <div class="spinner" style="border: 4px solid #f3f3f3; border-top: 4px solid #667eea; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 20px;"></div>
+            <p>Processando autenticação...</p>
+        </div>
+    </div>
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        // O app.js já processa o callback automaticamente
+        // Este script apenas garante que o processamento aconteça
+        window.addEventListener('load', () => {
+            if (!window.location.hash || !window.location.hash.includes('id_token')) {
+                setTimeout(() => {
+                    // Usar caminho relativo para funcionar em GitHub Pages
+                    const basePath = window.location.pathname.replace(/\/auth\/callback\.html$/, '') || '';
+                    window.location.href = basePath + '/index.html';
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
+
