@@ -1,5 +1,6 @@
 // Configuração
-const API_URL = "https://ptv-api-7oaetpyoxq-uc.a.run.app";
+const API_URL = "https://ptv-web-7oaetpyoxq-uc.a.run.app";
+// Usar ptv-web como proxy (tem domain:g.globo configurado no IAM)
 const CLIENT_ID = "486467427429-esnr1m7qtld28li8m7f3at3lasc75dme.apps.googleusercontent.com";
 const AUDIENCE = API_URL; // Audience deve ser a URL do Cloud Run
 
